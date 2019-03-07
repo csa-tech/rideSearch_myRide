@@ -1,0 +1,48 @@
+<!--pages/myRide/myRide.wxml-->
+
+<view class="iconContainer">
+  <image src="/images/me.jpg" style="width: 70rpx; height: 70rpx" class="meIcon"/>
+  <view class="iconText">= 我发布的</view>
+  <navigator url="../message/message">
+    <image class="bellIcon" src="/images/message.jpg"></image>
+  </navigator>
+  
+</view>
+
+<block wx:for="{{response}}" wx:for-item="item" wx:for-index="idx">
+
+<view wx:if="{{idx%2==0}}" class='greyListContainer'>
+  <view class="divider"></view>
+  <view class="line"> 出发地：{{item.departure}}</view>
+  <view class='line' >目的地: {{item.destination}}</view>
+
+  <view class='line'>出发日期：{{item.date}}</view>
+  <view class='line'> 出发时间：{{item.time}}</view>
+  <view class='line'>
+    <view ><text space="ensp">人数：{{item.approved_people}}/{{item.people}}      </text>    
+    <text  wx:if="{{item.driverID==gloablData.user_ID}}" class="pending" >等待回复</text> 
+    <!--<image wx:if="{{item.status=='mine'}}"src="/images/me.png" style="width: 50rpx; height: 50rpx" padding="1rpx" margin="1rpx" class="meIcon"/>-->
+    <text wx:if="{{item.status=='responded'}}" class="responded">已回复</text>
+    <image src="/images/me.jpg" wx:if="{{item.driverID==this.gloablData.user_ID}}" class="mine" class="image">我发布的           </image>
+    </view>
+  </view>
+</view>
+<view wx:else class="whiteListContainer">
+<view class="divider"></view>
+  <view class="line"> 出发地：{{item.departure}}</view>
+  <view class='line' >目的地: {{item.destination}}</view>
+
+  <view class='line'>出发日期：{{item.date}}</view>
+  <view class='line'> 出发时间：{{item.time}}</view>
+  <view class='line'>
+    <view ><text space="ensp">人数：{{item.approved_people}}/{{item.people}}      </text>    
+    <text  wx:if="{{item.status=='pending'}}" class="pending" >等待回复</text> 
+    <!--<image wx:if="{{item.status=='mine'}}"src="/images/me.png" style="width: 50rpx; height: 50rpx" padding="1rpx" margin="1rpx" class="meIcon"/>-->
+    <text wx:if="{{item.status=='responded'}}" class="responded">已回复</text>
+    <image src="/images/me.png" wx:if="{{item.status=='mine'}}" class="mine" class="image">我发布的           </image>
+    </view>
+  </view>
+</view>
+
+</block>
+<view class='newRideContainer'><navigator url="../newRide/newRide" class="newRideTab">创建行程</navigator></view>

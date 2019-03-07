@@ -1,0 +1,9 @@
+{
+  "component":true,
+  "usingComponents": {
+    "van-search": "/dist/search/index"
+  },
+  "navigationBarTitleText": "Departure",
+  "navigationBarBackgroundColor": "#DC143C",
+  "navigationBarTextStyle": "white"
+}

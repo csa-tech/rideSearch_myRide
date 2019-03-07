@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/departure/departure",
+    "pages/destination/destination",
+    "pages/information/information",
+    "pages/myRide/myRide",
+    "pages/newRide/newRide",
+    "pages/rideDetail/rideDetail",
+    "pages/message/message"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#DC143C",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/departure/departure",
+        "text": "Ride"
+      },
+      {
+        "pagePath": "pages/myRide/myRide",
+        "text": "myRide"
+      }
+    ]
+  }
+}

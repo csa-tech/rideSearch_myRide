@@ -1,0 +1,16 @@
+<!--pages/rideDetail/rideDetail.wxml-->
+<view>rideid:{{rideid}}</view>
+<view>driverName:{{driverName}}</view>
+<view>carType:{{carType}}</view>
+<view>departure:{{departure}}</view>
+<view>destination:{{destination}}</view>
+<view>price:{{price}}</view>
+<view>time:{{time}}</view>
+
+  
+  
+  
+  
+
+
+
